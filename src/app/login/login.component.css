@@ -1,0 +1,31 @@
+.card-header{
+    background-color: rgb(47, 47, 185);
+    color: white;
+    text-align: center;
+}
+button{
+    background-color: rgb(47, 47, 185);
+    color: white;
+}
+.card {
+    border-radius: 0px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+   }
+
+.imageClass{
+    width: 100%;
+    text-align: center;
+
+}
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-form-field{
+  padding: 0;
+}

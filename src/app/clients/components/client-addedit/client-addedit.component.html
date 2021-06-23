@@ -1,0 +1,33 @@
+<div id="spinnerWrapper" *ngIf="isUserAuthenticated()">
+    <mat-spinner *ngIf="!hideSpinner"></mat-spinner>
+</div>
+<div class="grid-container" *ngIf="hideSpinner">
+    <mat-card class="mat-elevation-z3">
+        <div style="margin-bottom:15px;">
+            <h3 style="display:inline;"> {{title}}</h3>
+            <button mat-button class="back-btn" [routerLink]="['/clients']">Nazad</button>
+        </div>
+    </mat-card>
+    <div class="mat-elevation-z8">
+        <form matForm [formGroup]="form">
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Naziv" formControlName="Name">
+                <mat-error *ngIf="f1.Name.errors?.required">Naziv je obavezan</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Adresa" formControlName="Address">
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="ID broj" formControlName="Idnumebr">
+                <mat-error *ngIf="f1.Idnumebr.errors?.pattern">ID broj mora biti u ispravnom formatu</mat-error>
+            </mat-form-field>
+            <div>
+                <button class="add-button" mat-raised-button style="margin-right:15px; margin-bottom:15px;"
+                    cdkFocusInitial (click)="onSubmit()">
+                    Sačuvaj
+                </button>
+            </div>
+            <br><br>
+        </form>
+    </div>
+</div>

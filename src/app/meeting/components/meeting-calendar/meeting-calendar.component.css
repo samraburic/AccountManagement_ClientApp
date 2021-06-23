@@ -1,0 +1,15 @@
+.calendar-container {
+    border: 1px solid transparent;
+    border-color: #fff #ddd;
+    margin: 0 2em 2em
+}
+
+.add-button {
+  
+    background-color: rgb(47, 47, 185);
+    color: white;
+    float: left;
+    margin-left: 10px;
+  
+  }
+

@@ -1,0 +1,27 @@
+mat-sidenav {
+    height: 100%;
+    width: 25%;
+  }
+  .side-nav-container{
+  height: 100%;
+  
+  }
+  .sidenav-link{
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  padding:5px;
+  
+  }
+  .sidenav-item{
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+  
+  
+    }
+  .sidenav-icon{
+    margin-right:10px;
+  }
+  
+  .nav-menu-content{
+  width: 27em;
+  
+  }
+  

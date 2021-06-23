@@ -1,0 +1,21 @@
+<div class="business-card" ontouchstart="this.classList.toggle('hover');" >
+  <div class="flipper">
+		<div class="front">
+			<div class="name">
+		      <span class="first">{{loggedUser.FirstName}} </span>
+		      <span class="last">{{loggedUser.LastName}}</span>
+		    </div>
+		</div>
+    <div class="back">
+      <div class="container-sm" style="background-color: white;">
+      </div>
+      <div class="container-lg">
+      	<ul class="social fa-ul">
+      	  <li><i class="fa fa-li fa-envelope"></i><a >{{loggedUser?.Email}}</a></li>
+      	  <li><i class="fa fa-li fa-phone"></i><a >{{loggedUser.Phone}}</a></li>
+      	</ul>
+      </div>
+    </div>
+	</div>
+</div>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" >

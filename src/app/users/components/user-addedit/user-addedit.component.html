@@ -1,0 +1,41 @@
+<div id="spinnerWrapper">
+    <mat-spinner *ngIf="!hideSpinner"></mat-spinner>
+</div>
+<div class="grid-container" *ngIf="hideSpinner">
+    <mat-card class="mat-elevation-z3">
+        <div style="margin-bottom:15px;">
+            <h3 style="display:inline;"> {{title}}</h3>
+            <button mat-button class="back-btn" [routerLink]="['/users']">Nazad</button>
+        </div>
+    </mat-card>
+    <div class="mat-elevation-z8">
+        <form matForm [formGroup]="form">
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Ime" formControlName="FirstName">
+                <mat-error *ngIf="f1.FirstName.errors?.required">Ime je obavezano</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Prezime" formControlName="LastName">
+                <mat-error *ngIf="f1.LastName.errors?.required">Prezime je obavezano</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Korisničko ime" formControlName="UserName">
+                <mat-error *ngIf="f1.UserName.errors?.required">Korisničko ime je obavezano</mat-error>
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="E-mail" formControlName="Email">
+            </mat-form-field>
+            <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                <input matInput placeholder="Telefon" formControlName="Phone">
+            </mat-form-field>
+
+            <div>
+                <button class="add-button" mat-raised-button style="margin-right:15px; margin-bottom:15px;"
+                    cdkFocusInitial (click)="onSubmit()">
+                    Sačuvaj
+                </button>
+            </div>
+            <br><br>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div>
+    <!-- *ngIf="isUserAuthenticated()" -->
+    <div id="spinnerWrapper">
+        <mat-spinner *ngIf="!hideSpinner"></mat-spinner>
+    </div>
+    <div class="grid-container" *ngIf="hideSpinner">
+        <mat-card class="mat-elevation-z3">
+            <div style="margin-bottom:15px;">
+                <h3 style="display:inline;"> {{title}}</h3>
+                <button mat-button class="back-btn" [routerLink]="['/meetings']">Nazad</button>
+            </div>
+        </mat-card>
+        <div class="mat-elevation-z8">
+            <form matForm [formGroup]="form">
+                <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                    <mat-select formControlName="UserId" placeholder="Korisnik">
+                        <mat-option  *ngFor="let u of users" [value]="u.UserId">{{u.FirstName + " " + u.LastName}} </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f1.UserId.errors?.required">Korisnik je obavezan</mat-error>
+                </mat-form-field>
+                <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                    <mat-select formControlName="ClientId" placeholder="Klijent">
+                        <mat-option  *ngFor="let c of clients" [value]="c.ClientId">{{c.Name }} </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f1.ClientId.errors?.required">Klijent je obavezan</mat-error>
+                </mat-form-field>
+                <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                    <mat-label>Datum </mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="MeetingDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field class="field" style="margin-left:15px; margin-top:15px;">
+                    <input matInput placeholder="Vrijeme" formControlName="MeetingTime">
+                    <mat-error *ngIf="f1.MeetingTime.errors?.required">Vrijeme je obavezno</mat-error>
+                    <mat-error *ngIf="f1.MeetingTime.errors?.pattern">Zadani format je hh:mm</mat-error>
+                  </mat-form-field>
+                <mat-form-field class="input-description" style="margin-left:15px; margin-top:15px;">
+                    <textarea matInput
+                    cdkTextareaAutosize
+                    placeholder="Napomena"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                    formControlName="Description"></textarea>
+                </mat-form-field>
+                <div>
+                    <button class="add-button" mat-raised-button style="margin-right:15px; margin-bottom:15px;"
+                        cdkFocusInitial (click)="onSubmit()">
+                        Sačuvaj
+                    </button>
+                </div>
+                <br><br>
+            </form>
+        </div>
+    </div>
+    </div>
+    

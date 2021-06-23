@@ -1,0 +1,13 @@
+<mat-toolbar class="all" *ngIf="isUserAuthenticated()">
+      <mat-toolbar-row>
+            <button mat-icon-button (click)="toggleNavMenu()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          <span class="example-spacer"></span>
+          <span>Account Management</span>
+          <span class="example-spacer"></span>
+          <button mat-icon-button (click)="openUserMenu()">
+              <mat-icon>person</mat-icon>
+            </button>
+        </mat-toolbar-row>
+  </mat-toolbar>

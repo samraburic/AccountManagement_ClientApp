@@ -1,0 +1,34 @@
+#card {
+    background:  rgb(237,28,36);
+    border-radius: 0px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+   }
+   #card h2, #card h5 {
+     color: white;
+     font-weight: normal;
+   }
+   #card h5 {
+     font-style: italic;
+     margin-top: 9px;
+   }
+   #card h2 {
+     margin-bottom: 9px;
+   }
+   #card img {
+     height: 150px;
+     width: 150px;
+     border-radius: 50%;
+     margin-bottom: 2em;
+     margin-top: 2em;
+   }
+   #userMenuContent {
+     width: 27em;
+   }
+   #sideNavContainer {
+     height: 100%;
+   }
+  

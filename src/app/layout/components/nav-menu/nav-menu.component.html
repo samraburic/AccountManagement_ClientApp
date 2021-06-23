@@ -1,0 +1,68 @@
+<div class="nav-menu-content">
+
+  <mat-nav-list>
+    <div class="sidenav-link">
+      <a mat-list-item routerLink="/">
+        <i class="material-icons sidenav-icon">home</i>
+        Početna
+      </a>
+    </div>
+    <mat-accordion >
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="sidenav-item">
+          <mat-panel-title>
+            <i class="material-icons sidenav-icon">person</i>
+            Administracija
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a mat-list-item routerLink="/users">
+            <i class="material-icons sidenav-icon">account_box</i>
+            Korisnici</a>
+        </mat-nav-list>
+
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-nav-list>
+
+  <mat-accordion >
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="sidenav-item">
+        <mat-panel-title>
+          <i class="material-icons sidenav-icon">chrome_reader_mode</i>
+          Šifarnik
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <a mat-list-item routerLink="/clients">
+          <i class="material-icons sidenav-icon">account_box</i>
+          Klijenti</a>
+      </mat-nav-list>
+
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion >
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="sidenav-item">
+        <mat-panel-title>
+          <i class="material-icons sidenav-icon">edit_calendar</i>
+          Planer
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/meetings">
+          <i class="material-icons sidenav-icon">edit_calendar</i>
+          Planer</a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

@@ -1,0 +1,55 @@
+<div *ngIf="isUserAuthenticated()">
+  <div id="spinnerWrapper">
+    <mat-spinner *ngIf="!hideSpinner"></mat-spinner>
+  </div>
+  <div class="grid-container" *ngIf="hideSpinner">
+  <mat-card class="mat-elevation-z3">
+    <div style="margin-bottom:15px;">
+      <h1 style="display:inline;"> Klijenti</h1>
+      <button mat-button class="add-button" [routerLink]="['addedit/',0]" >Dodaj</button>
+    </div>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pretraži">
+        <button mat-button matSuffix mat-icon-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+  </mat-card>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Naziv </th>
+          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Adresa </th>
+            <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Idnumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Broj </th>
+            <td mat-cell *matCellDef="let element"> {{element.Idnumebr}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Detalji </th>
+            <td mat-cell *matCellDef="let element" >
+               <button mat-icon-button color="primary" [routerLink]="['addedit/',element.ClientId]" aria-label="Example icon button with a home icon">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn"  (click)="onDelete(element.ClientId)" aria-label="Example icon button with a home icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    </div>
+
+</div>

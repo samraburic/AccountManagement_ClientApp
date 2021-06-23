@@ -1,0 +1,29 @@
+.grid-container {
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1em;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    margin-right: 12px;
+  }
+  
+  .add-button {
+  
+    background-color: rgb(47, 47, 185);
+    color: white;
+    float: right;
+  
+  }
+
+  #spinnerWrapper
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
